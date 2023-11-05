@@ -106,7 +106,10 @@ publicVariable "a3e_var_Escape_hoursSkipped";
 [_date] call bis_fnc_setDate;
 
 
-setTimeMultiplier Param_TimeMultiplier;
+switch (Param_TimeMultiplier) do {
+	case -1: { [] execVM "Scripts\Escape\TimeCycle.sqf" };
+	default { setTimeMultiplier Param_TimeMultiplier };
+}
 call compile preprocessFileLineNumbers ("Island\CommunicationCenterMarkers.sqf");
 
 

@@ -251,6 +251,7 @@
                 <File name="Scripts\Escape\Functions.sqf" />
                 <File name="Scripts\Escape\SearchLeader.sqf" />
                 <File name="Scripts\Escape\StaticWeatherEffects.sqf" />
+                <File name="Scripts\Escape\TimeCycle.sqf" />
             </Folder>
             <Folder name="outlw_magRepack">
                 <Folder name="Configs">

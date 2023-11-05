@@ -22,7 +22,7 @@ class Mission
 	randomSeed=16426086;
 	class Intel
 	{
-		briefingName="Escape Altis CUP RU vs BAF 1.10";
+		briefingName="Escape Altis CUP RU vs BAF 1.10 (Chip's version)";
 		startWeather=0;
 		startWind=0.099999994;
 		startWaves=0.099999994;
