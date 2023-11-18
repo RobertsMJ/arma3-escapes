@@ -5,7 +5,7 @@ while {true} do
     // From 8pm to 3am, go full speed
     if (daytime >= 18 || daytime <= 6) then
     {
-        if ((daytime > 18 && daytime < 20) or (daytime > 5 && daytime < 6)) then
+        if ((daytime > 18 && daytime < 20) or (daytime > 6 && daytime < 7)) then
         {
             setTimeMultiplier 24
         }
