@@ -1,0 +1,13 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - cp -vr common/* co10_Escape_CUP_RU_vs_BAF0.Altis/
+      - cp -vr common/* co10_Escape_CUP_RU_vs_BAF0.Tanoa/
+      - cp -vr common/* co10_Escape_CUP_RU_vs_BAF0.Takistan/
