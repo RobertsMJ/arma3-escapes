@@ -174,7 +174,7 @@ while {true} do {
 				_roadBlocks pushback [_instanceNo, _roadSegment, _composition select 0, _composition select 1];
 
 				if (missionNamespace getvariable["DebugRoadblocks",false]) then {
-					["Road block created. Number of road blocks: " + str count _roadBlocks] call drn_fnc_CL_ShowDebugTextAllClients;
+					["Road block created. Number of road blocks: " + str count _roadBlocks + " at " + str getPos _roadSegment] call drn_fnc_CL_ShowDebugTextAllClients;
 					["drn(missionnamespace getvariable [DebugRoadblocks,false])Marker_RoadBlocks_" + str _instanceNo, getPos _roadSegment, "mil_dot", "ColorRed", "Road Block"] call drn_fnc_CL_SetDebugMarkerAllClients;
 				};
 			};

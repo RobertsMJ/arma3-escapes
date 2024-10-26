@@ -17,8 +17,8 @@ tasks:
       - cp -r common/* '/mnt/c/Users/rober/Documents/Arma 3 - Other Profiles/mitch/mpmissions/co10_Escape_CUP_RU_vs_BAF0.Altis'
   tanoa:
     cmds:
-      - cp -vr co10_Escape_CUP_RU_vs_BAF2.Tanoa/ '/mnt/c/Users/rober/Documents/Arma 3 - Other Profiles/mitch/mpmissions/'
-      - cp -vr common/* '/mnt/c/Users/rober/Documents/Arma 3 - Other Profiles/mitch/mpmissions/co10_Escape_CUP_RU_vs_BAF2.Tanoa'
+      - cp -r co10_Escape_CUP_RU_vs_BAF2.Tanoa/ '/mnt/c/Users/rober/Documents/Arma 3 - Other Profiles/mitch/mpmissions/'
+      - cp -r common/* '/mnt/c/Users/rober/Documents/Arma 3 - Other Profiles/mitch/mpmissions/co10_Escape_CUP_RU_vs_BAF2.Tanoa'
   takistan:
     cmds:
       - cp -r co10_Escape_CUP_RU_vs_BAF22.Takistan/ '/mnt/c/Users/rober/Documents/Arma 3 - Other Profiles/mitch/mpmissions/'

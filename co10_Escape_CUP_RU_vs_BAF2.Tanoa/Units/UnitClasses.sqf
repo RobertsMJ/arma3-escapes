@@ -608,6 +608,9 @@ a3e_arr_AmmoDepotSpecialWeapons pushback ["CUP_arifle_MG36", 30, 1, 2, ["CUP_100
 
 // Weapons and ammo in the launchers box
 a3e_arr_AmmoDepotLaunchers = [];
+// Guaranteed
+a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_RPG18", 100, 1, 3, ["CUP_RPG18_M"], 1];
+a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_FIM92Stinger", 100, 1, 2, ["CUP_Igla_M"], 1];
 // CSAT weapons
 a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_Mk153Mod0", 50, 1, 2, ["CUP_SMAW_HEAA_M", "CUP_SMAW_HEDP_M"], 4];
 a3e_arr_AmmoDepotLaunchers pushback ["CUP_launch_M136", 50, 1, 3, ["CUP_M136_M"], 1];

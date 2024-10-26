@@ -69,7 +69,7 @@ class Params
 	    title="Time Multiplier (Fasttime)";
 		values[]={1,6,12,24,36,-1};
 		texts[]={"1:1 (Normal)","1:6 (Day = 4 Hours)","1:12 (Day = 2 Hours)","1:24 (Day = 1 Hour)","1:36 (Day = 40 Minutes)","Dynamic (Day = 40 Minutes, Night = 20 Minutes)"};
-		default = 6;
+		default = -1;
 	};
 	class Param_Weather {
 		title="Weather";
@@ -130,7 +130,7 @@ class Params
 		title="War-Torn mode (CSAT and AAF are fighting each other)";
 		values[]={0,1};
 		texts[]={"Disabled","Enabled"};
-		default = 0;
+		default = 1;
 	};
 	class Param_ReviveView
 	{
@@ -242,7 +242,7 @@ class Params
 		title="Mag repack";
 		values[]={0,1};
 		texts[]={"Disabled", "Enabled"};
-		default = 0;
+		default = 1;
 	};
 	class Param_Spacer7
     {
