@@ -1,0 +1,26 @@
+name: Create Release
+on:
+  push:
+   tags:
+    - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+   name: Create Release
+   runs-on: ubuntu-latest
+   steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Setup go-task
+      uses: pnorton5432/setup-task@v1
+      with:
+        task-version: 3.39.2
+    - name: Build
+      run: task build
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: out/arma3missions.tar.gz
