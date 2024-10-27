@@ -257,18 +257,8 @@ switch (_enemyFrequency) do {
 // Random array. General infantry types. E.g. village patrols, ambient infantry, ammo depot guards, communication center guards, etc.
 a3e_arr_Escape_InfantryTypes = [
 	"CUP_B_BAF_Soldier_DDPM"
-	// ,"CUP_B_BAF_Soldier_AA_DDPM"
-	// ,"CUP_B_BAF_Soldier_AA_DDPM"
-	// ,"CUP_B_BAF_Soldier_AAA_DDPM"
-	// ,"CUP_B_BAF_Soldier_AAT_DDPM"
-	// ,"CUP_B_BAF_Soldier_AHAT_DDPM"
 	,"CUP_B_BAF_Soldier_AAR_DDPM"
 	,"CUP_B_BAF_Soldier_AMG_DDPM"
-	// ,"CUP_B_BAF_Soldier_AT_DDPM"
-	// ,"CUP_B_BAF_Soldier_AT_DDPM"
-	// ,"CUP_B_BAF_Soldier_AT_DDPM"
-	// ,"CUP_B_BAF_Soldier_HAT_DDPM"
-	// ,"CUP_B_BAF_Soldier_HAT_DDPM"
 	,"CUP_B_BAF_Soldier_AR_DDPM"
 	,"CUP_B_BAF_Engineer_DDPM"
 	,"CUP_B_BAF_Engineer_DDPM"
@@ -290,26 +280,31 @@ a3e_arr_Escape_InfantryTypes = [
 	,"CUP_B_BAF_Spotter_DDPM"
 	,"CUP_B_BAF_Spotter_L85TWS_DDPM"
 	,"CUP_B_BAF_Soldier_TL_DDPM"];
+a3e_arr_Escape_InfantryTypes_AT = ["CUP_B_BAF_Soldier_AT_DDPM","CUP_B_BAF_Soldier_HAT_DDPM"];
+a3e_arr_Escape_InfantryTypes_AA = ["CUP_B_BAF_Soldier_AA_DDPM"];
 a3e_arr_Escape_InfantryTypes_Ind = [
-	// "CUP_B_CZ_Soldier_ARPG_DES"
 	,"CUP_B_CZ_Soldier_AMG_DES"
 	,"CUP_B_CZ_Soldier_AR_DES"
-	,"CUP_B_CZ_Engineer_DES"
 	,"CUP_B_CZ_ExplosiveSpecialist_DES"
 	,"CUP_B_CZ_Soldier_805_GL_DES"
 	,"CUP_B_CZ_Soldier_MG_DES"
 	,"CUP_B_CZ_Soldier_Marksman_DES"
 	,"CUP_B_CZ_Medic_DES"
+	,"CUP_B_CZ_Medic_DES"
+	,"CUP_B_CZ_Engineer_DES"
+	,"CUP_B_CZ_Engineer_DES"
 	,"CUP_B_CZ_Soldier_DES"
-	// ,"CUP_B_CZ_Soldier_AT_DES"
-	// ,"CUP_B_CZ_Soldier_AT_DES"
+	,"CUP_B_CZ_Soldier_DES"
+	,"CUP_B_CZ_Soldier_DES"
+	,"CUP_B_CZ_Soldier_DES"
 	,"CUP_B_CZ_Soldier_Backpack_DES"
 	,"CUP_B_CZ_Soldier_805_DES"
-	// ,"CUP_B_CZ_Soldier_RPG_DES"
 	,"CUP_B_CZ_Sniper_DES"
 	,"CUP_B_CZ_Soldier_Light_DES"
 	,"CUP_B_CZ_Spotter_DES"
 	,"CUP_B_CZ_Soldier_SL_DES"];
+a3e_arr_Escape_InfantryTypes_AT_Ind = ["CUP_B_CZ_Soldier_RPG_DES", "CUP_B_CZ_Soldier_AT_DES"];
+a3e_arr_Escape_InfantryTypes_AA_Ind = ["CUP_B_CZ_Soldier_AA_DES"];
 a3e_arr_recon_InfantryTypes = [
 	"CUP_B_US_SpecOps_AR"
 	,"CUP_B_US_SpecOps_JTAC"

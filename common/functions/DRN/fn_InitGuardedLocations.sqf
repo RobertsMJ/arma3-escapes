@@ -75,7 +75,7 @@ while {_locationExists} do {
 	_locationPos = getMarkerPos _locationFullName;
 
 	_soldierCount = _minSoldierCount + floor (random (_maxSoldierCount - _minSoldierCount + 1));
-    
+
 	_soldiers = [];
 	for [{_i = 0}, {_i < _soldierCount}, {_i = _i + 1}] do {
 		_soldierType = _possibleInfantryTypes select (floor (random (count _possibleInfantryTypes)));
@@ -85,13 +85,40 @@ while {_locationExists} do {
 		_soldiers set [count _soldiers, _soldier];
 	};
 
+    // Add AT soldiers
+    private _guardTypesAT = [];
+    if(_side == A3E_VAR_Side_Opfor) then {
+        _guardTypesAT = a3e_arr_Escape_InfantryTypes_AT;
+    };
+    if (_side == A3E_VAR_Side_Ind) then {
+        _guardTypesAT = a3e_arr_Escape_InfantryTypes_AT_Ind;
+    };
+
+    _unitAT1 = [_guardTypesAT, (_minSkill + random (_maxSkill - _minSkill)), false, 0, objNull, objNull, false];
+    _soldiers set [count _soldiers, _unitAT1];
+    _unitAT2 = [_guardTypesAT, (_minSkill + random (_maxSkill - _minSkill)), false, 0, objNull, objNull, false];
+    _soldiers set [count _soldiers, _unitAT2];
+
+    // Add AA soldiers
+    private _guardTypesAA = [];
+    if(_side == A3E_VAR_Side_Opfor) then {
+        _guardTypesAA = a3e_arr_Escape_InfantryTypes_AA;
+    };
+    if (_side == A3E_VAR_Side_Ind) then {
+        _guardTypesAA = a3e_arr_Escape_InfantryTypes_AA_Ind;
+    };
+
+    _unitAA1 = [_guardTypesAA, (_minSkill + random (_maxSkill - _minSkill)), false, 0, objNull, objNull, false];
+    _soldiers set [count _soldiers, _unitAA1];
+
+
 	_location = [_locationFullName, "", _soldiers, _locationPos];
 
     _location call compile format ["a3e_var_guardedLocations%1 set [count a3e_var_guardedLocations%2, _this];", _instanceNo, _instanceNo];
 
     // Set ammo depot trigger
     private ["_marker", "_count", "_populated", "_trigger"];
-    
+
     _trigger = createTrigger["EmptyDetector", getMarkerPos _locationFullName, false];
 	_trigger setTriggerInterval 5;
     _trigger triggerAttachVehicle [vehicle (units _referenceGroup select 0)];
@@ -99,7 +126,7 @@ while {_locationExists} do {
     _trigger setTriggerActivation["MEMBER", "PRESENT", true];
     _trigger setTriggerTimeout [1, 1, 1, true];
     _trigger setTriggerStatements["this", "_nil = [a3e_var_guardedLocations" + str _instanceNo + " select " + str _locationNo + ", " + str _side + ", " + str _maxGroupsCount + ", " + str _debug + "] spawn drn_fnc_PopulateLocation;", "_nil = [a3e_var_guardedLocations" + str _instanceNo + " select " + str _locationNo + ", " + str _debug + "] spawn drn_fnc_DepopulateLocation;"];
-    
+
 	// Get next guarded position
 	_locationNo = _locationNo + 1;
 	_locationFullName = _locationMarkerName + str _locationNo;

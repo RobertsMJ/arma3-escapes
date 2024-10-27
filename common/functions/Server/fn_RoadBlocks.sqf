@@ -136,6 +136,17 @@ _fnc_CreateRoadBlock = {
     _unit4 = _group createUnit [selectRandom _guardTypes, _pos, [], 0, "FORM"];
 	[_unit4] joinSilent _group;
 
+    private _guardTypesAT = [];
+    if(_side == A3E_VAR_Side_Opfor) then {
+        _guardTypesAT = a3e_arr_Escape_InfantryTypes_AT;
+    };
+    if (_side == A3E_VAR_Side_Ind) then {
+        _guardTypesAT = a3e_arr_Escape_InfantryTypes_AT_Ind;
+    };
+
+    _unitAT = _group createUnit [selectRandom _guardTypesAT, _pos, [], 0, "FORM"];
+	[_unitAT] joinSilent _group;
+
     {
         _x setUnitRank "LIEUTENANT";
     } foreach units _group;
