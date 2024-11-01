@@ -271,6 +271,10 @@ a3e_arr_Escape_InfantryTypes = [
 	,"CUP_B_BAF_Medic_DDPM"
 	,"CUP_B_BAF_Officer_DDPM"
 	,"CUP_B_BAF_Soldier_Backpack_DDPM"
+	,"CUP_B_BAF_Soldier_Backpack_DDPM"
+	,"CUP_B_BAF_Soldier_Backpack_DDPM"
+	,"CUP_B_BAF_Soldier_Backpack_DDPM"
+	,"CUP_B_BAF_Soldier_Backpack_DDPM"
 	,"CUP_B_BAF_Soldier_Light_DDPM"
 	,"CUP_B_BAF_Soldier_Night_DDPM"
 	,"CUP_B_BAF_Soldier_SL_DDPM"
@@ -283,7 +287,7 @@ a3e_arr_Escape_InfantryTypes = [
 a3e_arr_Escape_InfantryTypes_AT = ["CUP_B_BAF_Soldier_AT_DDPM","CUP_B_BAF_Soldier_HAT_DDPM"];
 a3e_arr_Escape_InfantryTypes_AA = ["CUP_B_BAF_Soldier_AA_DDPM"];
 a3e_arr_Escape_InfantryTypes_Ind = [
-	,"CUP_B_CZ_Soldier_AMG_DES"
+	"CUP_B_CZ_Soldier_AMG_DES"
 	,"CUP_B_CZ_Soldier_AR_DES"
 	,"CUP_B_CZ_ExplosiveSpecialist_DES"
 	,"CUP_B_CZ_Soldier_805_GL_DES"

@@ -123,7 +123,7 @@ class Params
 		title="Artillery";
 		values[]={0.5,1,2};
 		texts[]={"Reduced","Default","Death in fire"};
-		default = 1;
+		default = 0.5;
 	};
 	class Param_War_Torn
 	{

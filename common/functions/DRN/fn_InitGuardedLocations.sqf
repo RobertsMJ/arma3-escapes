@@ -76,7 +76,7 @@ while {_locationExists} do {
 
 	_soldierCount = _minSoldierCount + floor (random (_maxSoldierCount - _minSoldierCount + 1));
 
-	_soldiers = [];
+    _soldiers = [];
 	for [{_i = 0}, {_i < _soldierCount}, {_i = _i + 1}] do {
 		_soldierType = _possibleInfantryTypes select (floor (random (count _possibleInfantryTypes)));
 
@@ -89,27 +89,30 @@ while {_locationExists} do {
     private _guardTypesAT = [];
     if(_side == A3E_VAR_Side_Opfor) then {
         _guardTypesAT = a3e_arr_Escape_InfantryTypes_AT;
-    };
-    if (_side == A3E_VAR_Side_Ind) then {
+    } else {
         _guardTypesAT = a3e_arr_Escape_InfantryTypes_AT_Ind;
     };
-
-    _unitAT1 = [_guardTypesAT, (_minSkill + random (_maxSkill - _minSkill)), false, 0, objNull, objNull, false];
-    _soldiers set [count _soldiers, _unitAT1];
-    _unitAT2 = [_guardTypesAT, (_minSkill + random (_maxSkill - _minSkill)), false, 0, objNull, objNull, false];
-    _soldiers set [count _soldiers, _unitAT2];
+    for [{_i=0}, {_i < 2}, {_i = _i+1}] do {
+    ["Adding AT"] call a3e_fnc_debugmsg;
+    _soldierType = _guardTypesAT select (floor (random (count _guardTypesAT)));
+		_soldier = [_soldierType, (_minSkill + random (_maxSkill - _minSkill)), false, 0, objNull, objNull, false];
+		_soldiers set [count _soldiers, _soldier];
+    };
 
     // Add AA soldiers
     private _guardTypesAA = [];
     if(_side == A3E_VAR_Side_Opfor) then {
         _guardTypesAA = a3e_arr_Escape_InfantryTypes_AA;
-    };
-    if (_side == A3E_VAR_Side_Ind) then {
+    } else {
         _guardTypesAA = a3e_arr_Escape_InfantryTypes_AA_Ind;
     };
 
-    _unitAA1 = [_guardTypesAA, (_minSkill + random (_maxSkill - _minSkill)), false, 0, objNull, objNull, false];
-    _soldiers set [count _soldiers, _unitAA1];
+    for [{_i=0}, {_i < 1}, {_i = _i+1}] do {
+        ["Adding AA"] call a3e_fnc_debugmsg;
+        _soldierType = _guardTypesAA select (floor (random (count _guardTypesAA)));
+		_soldier = [_soldierType, (_minSkill + random (_maxSkill - _minSkill)), false, 0, objNull, objNull, false];
+		_soldiers set [count _soldiers, _soldier];
+    };
 
 
 	_location = [_locationFullName, "", _soldiers, _locationPos];
