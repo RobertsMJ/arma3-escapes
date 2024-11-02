@@ -1,14 +1,16 @@
-params["_unit","_bodyPart","_amountOfDamage","_killer","_projectile"];
-//["HitFace","HitNeck","HitPelvis","HitAbdomen","HitDiaphragm","HitChest","HitArms","HitHead","HitBody","HitHands","HitLegs"]
-//["face_hub","neck","pelvis","spine1","spine2","spine3","arms","head","body","hands","legs"]
-if (alive _unit
-	&& {_amountOfDamage >= 1}
-	&& {!(_unit getVariable ["AT_Revive_isUnconscious",false])}
-	&& {_bodyPart in ["","head","face_hub","head_hit","neck","spine1","spine2","spine3","pelvis","body"]}
-) then {
-	_unit setDamage 0;
-	_unit allowDamage false;
+params ["_unit", "_bodyPart", "_amountOfDamage", "_killer", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit", "_context"];
+if(_unit getVariable ["AT_Revive_isUnconscious",false]) then {
 	_amountOfDamage = 0;
-	[_unit, _killer] spawn ATR_FNC_Unconscious;
+} else {
+	if ((_amountOfDamage >= 1) 
+		&& {_bodyPart in ["","head","face_hub","head_hit","neck","spine1","spine2","spine3","pelvis","body"]}
+	) then {
+		_unit setVariable ["AT_Revive_isUnconscious", true, true];
+		_unit allowDamage false;
+		_unit setDamage 0;
+		[_unit] spawn ATR_FNC_Unconscious;
+		[_unit, _killer, _projectile] call ATR_FNC_BroadcastKill;
+		_amountOfDamage = 0;
+	};
 };
 _amountOfDamage;

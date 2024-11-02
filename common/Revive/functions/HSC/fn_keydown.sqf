@@ -72,11 +72,10 @@ if(_dikCode in (actionKeys "nightVision")) then {
 };
 if(_dikCode in (actionKeys "showMap") || _dikCode in (actionKeys "hideMap")) then {
 	if(visibleMap) then {
-		openMap [false,false];
+		openMap [false, false];
 	} else {
-		openMap [true,true];
+		openMap [true, true];
 	};
-	//_handled = false;
 };
 if(_dikCode == DIK_RETURN) then {
 	_handled = false;
